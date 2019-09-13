@@ -48,6 +48,17 @@ namespace timeout.ViewModels
             }
         }
 
+        private string _editText;
+        public string EditText
+        {
+            get => _editText;
+            set
+            {
+                SetProperty(ref _editText, value);
+                RaisePropertyChanged();
+                RestartTimer();
+            }
+        }
         /// <summary>
         /// Command binding used to reset the timer
         /// </summary>
@@ -101,6 +112,11 @@ namespace timeout.ViewModels
             TotalSeconds = new TimeSpan(0, 0, 20);
             TimerString = "Reset";
             _timer.Start();
-        }        
+        }
+
+        void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            RestartTimer();
+        }
     }
 }

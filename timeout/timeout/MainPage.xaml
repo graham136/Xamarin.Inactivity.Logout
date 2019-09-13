@@ -14,6 +14,11 @@
         <Label FontSize="Large"
                Text="Click on reset to rest the timer to not logout" />
         <Label Text="{Binding TimerString, Mode=TwoWay}" />
+        <Entry Text="{Binding EditText}">
+            <Entry.Behaviors>
+                
+            </Entry.Behaviors>
+        </Entry>
         <Button Text="Reset"
                 Command="{Binding ResetTimer}" />
     </StackLayout>
