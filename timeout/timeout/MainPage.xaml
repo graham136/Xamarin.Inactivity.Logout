@@ -11,16 +11,13 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-            <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding ResetTimer}" />
-            </StackLayout.GestureRecognizers>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ResetTimer}" />
+        </StackLayout.GestureRecognizers>
         <Label FontSize="Large"
                Text="Please Edit the field or Click on reset to reset the timer to not logout" />
         <Label Text="{Binding TimerString, Mode=TwoWay}" />
         <Entry Text="{Binding EditText}">
-            <Entry.Behaviors>
-                
-            </Entry.Behaviors>
         </Entry>
         <Button Text="Reset"
                 Command="{Binding ResetTimer}" />
